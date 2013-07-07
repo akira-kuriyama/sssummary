@@ -4,9 +4,9 @@ require File.expand_path('../lib/sssummary/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["akira-kuriyama"]
   gem.email         = ["marronshepherd2@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Summarize a formatted data like CSV by sql on the shell}
+  gem.summary       = %q{A client library for summarize data by sql on the shell}
+  gem.homepage      = 'https://github.com/akira-kuriyama/sssummary.git'
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
