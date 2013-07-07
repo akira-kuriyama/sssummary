@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 # -*- encoding: utf-8 -*-
 
+
 require 'rubygems'
-require '../lib/sss'
+require_relative '../lib/sss'
 require 'optparse'
 
 options = {}
@@ -46,5 +47,21 @@ EOH
 	exit(1)
 end
 
-retval = Sssummary::Sss.new.execute(options, sql)
+def get_input_file(options)
+	STDIN.gets if options[:ignore_header]
+	input_file = nil
+	if options[:file].nil?
+		if File.pipe?(STDIN)
+			input_file = STDIN
+		else
+			puts 'Error : input data is empty!'
+			exit(1)
+		end
+	else
+		input_file = File.read(options[:file])
+	end
+	input_file
+end
+
+retval = Sssummary::Sss.new.execute(options, sql, get_input_file(options))
 exit retval

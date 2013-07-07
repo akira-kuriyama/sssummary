@@ -7,9 +7,9 @@ module Sssummary
 	class Sss
 
 		public
-		def execute(options, sql)
+		def execute(options, sql, input_file)
 			begin
-				set_up(options, sql)
+				set_up(options, sql, input_file)
 				@records = get_records
 				create_table
 				import
@@ -22,10 +22,11 @@ module Sssummary
 		end
 
 		private
-		def set_up(options, sql)
+		def set_up(options, sql, input_file)
 			puts 'options : ' + options.to_s if options[:verbose]
 			@options = options
 			@sql = sql
+			@input_file = input_file
 			@options[:import_separator] ||= "\t"
 			@options[:output_separator] ||= "\t"
 			@options[:db_name] ||= 'db1'
@@ -34,20 +35,8 @@ module Sssummary
 
 		# get data from STANDARD INPUT or FILE
 		def get_records
-			STDIN.gets if @options[:ignore_header]
 			options = {:col_sep => @options[:import_separator], :skip_blanks => true}
-			file = nil
-			if @options[:file].nil?
-				if File.pipe?(STDIN)
-					file = STDIN
-				else
-					puts 'Error : input data is empty!'
-					exit(1)
-				end
-			else
-				file = File.read(@options[:file])
-			end
-			records = CSV.parse(file, options)
+			records = CSV.parse(@input_file, options)
 			if records.empty?
 				puts 'Error : input data is empty!'
 				exit(1)
