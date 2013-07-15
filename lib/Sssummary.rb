@@ -51,8 +51,6 @@ class Sssummary
 		input_file
 	end
 
-
-	# get data from STANDARD INPUT or FILE
 	def get_records
 		raise FileEmptyError if @input_file.nil?
 		options = {:col_sep => @options[:import_separator], :skip_blanks => true}
@@ -162,5 +160,3 @@ class Sssummary
 	class FileEmptyError < StandardError;
 	end
 end
-
-
