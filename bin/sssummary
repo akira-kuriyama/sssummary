@@ -26,7 +26,7 @@ end
 
 if options[:error] || options[:help]
 	puts <<"EOH"
-usage: scollct [OPTION]... SQL
+usage: sssummary [OPTION]... SQL
   -f, --file              file path for aggregation.
                           If this option are not specified, read aggregation data from STANDARD INPUT.
   -d, --database          database name.

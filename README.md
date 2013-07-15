@@ -31,7 +31,7 @@ $ cat test.tsv | sssummary 'select c1, avg(c2) from t group by c1 order by c1'
 
 ## Usage
 
-	usage: scollct [OPTION]... SQL
+	usage: sssummary [OPTION]... SQL
 	  -f, --file              file path for aggregation.
 				  If this option are not specified, read aggregation data from STANDARD INPUT.
 	  -d, --database          database name.
