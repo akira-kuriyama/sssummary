@@ -16,8 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Sssummary::VERSION
   
-  gem.add_development_dependency 'CSV'
-  gem.add_development_dependency 'optparse'
   gem.add_development_dependency 'sqlite3'
+  gem.add_development_dependency 'rspec'
 
 end

@@ -1,3 +1,3 @@
-module Sssummary
+class Sssummary
   VERSION = '0.0.1'
 end
