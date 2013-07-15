@@ -16,7 +16,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Sssummary::VERSION
   
-  gem.add_development_dependency 'sqlite3'
-  gem.add_development_dependency 'rspec'
+  gem.add_runtime_dependency 'sqlite3', '~> 1.3.7'
+
+  gem.add_development_dependency 'rspec', '~> 2.0'
 
 end
