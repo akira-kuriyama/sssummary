@@ -24,10 +24,8 @@ begin
 rescue OptionParser::ParseError
 	options[:error] = true
 end
-show_help if options[:error] || options[:help]
-sql = ARGV[0]
 
-def show_help
+if options[:error] || options[:help]
 	puts <<"EOH"
 usage: scollct [OPTION]... SQL
   -f, --file              file path for aggregation.
@@ -46,7 +44,7 @@ EOH
 	exit(0) if options[:help]
 	exit(1)
 end
-
+sql = ARGV[0]
 
 exit_status, output = Sssummary.new.execute(options, sql)
 puts output
