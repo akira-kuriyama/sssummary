@@ -34,7 +34,7 @@ class Sssummary
 		@input_file = get_input_file(options)
 		@options[:import_separator] ||= "\t"
 		@options[:output_separator] ||= "\t"
-		@options[:db_name] ||= 'db1'
+		@options[:db_name] ||= 'sssummary'
 		@options[:table_name] ||= 't'
 	end
 

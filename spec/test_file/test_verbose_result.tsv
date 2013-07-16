@@ -1,5 +1,5 @@
 options : {:file=>"spec/test_file/test.tsv", :verbose=>true}
-created Database at #pwd#/db1.db
+created Database at #pwd#/sssummary.db
 create table sql : CREATE TABLE t (c1 text,c2 text,c3 text);
 insert sql : INSERT INTO t VALUES(?,?,?);
 sql : select * from t order by c1
@@ -14,4 +14,4 @@ result :
 2013/07/01 23:11	600	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25
 2013/07/01 23:11	890	Mozilla/5.0 (Linux; U; Android 3.2.1; ja-jp; Transformer TF101 Build/HTK75) AppleWebKit/534.13 (KHTML, like Gecko) Version/4.0 Safari/534.13
 
-drop Database at #pwd#/db1.db
+drop Database at #pwd#/sssummary.db

@@ -43,8 +43,8 @@ describe 'Sssummary' do
 
 		exit_status.should == 0
 		output.should == File.read('spec/test_file/test_result.tsv').to_s
-		File.exist?('db1.db').should be_true
-		File.delete('db1.db')
+		File.exist?('sssummary.db').should be_true
+		File.delete('sssummary.db')
 	end
 
 	it 'dbfileの保存場所を指定した場合、その保存場所にdbfileが作成されること' do
@@ -57,8 +57,8 @@ describe 'Sssummary' do
 
 		exit_status.should == 0
 		output.should == File.read('spec/test_file/test_result.tsv').to_s
-		File.exist?('spec/test_file/db1.db').should be_true
-		File.delete('spec/test_file/db1.db')
+		File.exist?('spec/test_file/sssummary.db').should be_true
+		File.delete('spec/test_file/sssummary.db')
 	end
 
 	it 'dbfileの保存場所が不正だった場合、エラーが発生すること' do
@@ -80,8 +80,8 @@ describe 'Sssummary' do
 
 		exit_status.should == 0
 		output.should == File.read('spec/test_file/test_result.tsv').to_s
-		File.exist?('db1.db').should be_true
-		File.delete('db1.db')
+		File.exist?('sssummary.db').should be_true
+		File.delete('sssummary.db')
 	end
 
 	it 'db名を指定した場合、指定されたdb名になること' do
@@ -213,7 +213,7 @@ describe 'Sssummary' do
 
 		exit_status.should == 0
 		output.should == File.read('spec/test_file/test_result.tsv').to_s
-		File.exist?('db1.db').should be_false
+		File.exist?('sssummary.db').should be_false
 	end
 
 	it 'leave-databaseオプションを指定した場合、実行後にdbファイルが削除されていないこと' do
@@ -225,8 +225,8 @@ describe 'Sssummary' do
 
 		exit_status.should == 0
 		output.should == File.read('spec/test_file/test_result.tsv').to_s
-		File.exist?('db1.db').should be_true
-		File.delete('db1.db')
+		File.exist?('sssummary.db').should be_true
+		File.delete('sssummary.db')
 	end
 
 	it 'ignore-headerオプションを指定しない場合、ヘッダーはインポートされること' do
