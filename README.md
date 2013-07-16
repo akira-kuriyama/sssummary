@@ -32,18 +32,18 @@ $ cat test.tsv | sssummary 'select c1, avg(c2) from t group by c1 order by c1'
 ## Usage
 
 	usage: sssummary [OPTION]... SQL
-	  -f, --file              file path for aggregation.
-				  If this option are not specified, read aggregation data from STANDARD INPUT.
+	  -f, --file              file path for summarizing.
+	                          If this option are not specified, read aggregation data from STANDARD INPUT.
 	  -d, --database          database name.
-	  -p, --database file     the path where you want to save the database file.
+	  -p, --database-file     the path where you want to save the database file.
 	  -t, --table             table name.
 	  -c, --columns           column names. (e.g., date,url,elapsed_time)
 	  -s, --import-separator  The String placed between each field in import file. default string is TAB.
 	  -o, --output-separator  The String placed between each field in output. default string is TAB.
 	  -l, --leave-database    leave the database. If this option are not specified, delete the database file after processing.
-	  -i, --ignore-header     ignore header(first line) in import file
+	  -i, --ignore-header     ignore header(first line) in import file.
 	  -v, --verbose           explain what is being done.
-	  -h, --help              show this message
+	  -h, --help              show this message.
 
 
 ## Contributing
