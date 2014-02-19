@@ -1,6 +1,6 @@
 # Sssummary
 
-Summarize a formatted data like CSV by sql on the shell.
+Summarize a formatted data like CSV by SQL on the shell.
 
 example:
 
