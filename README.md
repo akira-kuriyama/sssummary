@@ -22,6 +22,7 @@ $ cat test.tsv | sssummary 'select c1, avg(c2) from t group by c1 order by c1'
 2013/07/01 23:11	0.745
 ```
 
+See: http://d.hatena.ne.jp/shepherdMaster/20130716/1373995961
 
 ## Installation
 
